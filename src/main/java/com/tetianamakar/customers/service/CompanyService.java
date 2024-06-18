@@ -1,0 +1,51 @@
+package com.tetianamakar.customers.service;
+
+import com.tetianamakar.customers.converter.EntityConverter;
+import com.tetianamakar.customers.entity.Company;
+import com.tetianamakar.customers.payload.request.CompanyRequest;
+import com.tetianamakar.customers.payload.response.CompanyResponse;
+import com.tetianamakar.customers.repository.CompanyRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.UUID;
+
+@Service
+public class CompanyService {
+
+    private final CompanyRepository repository;
+
+    public CompanyService(CompanyRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<CompanyResponse> getAllCompanies() {
+        List<Company> companies = repository.findAll();
+        return EntityConverter.convertCompanies(companies);
+    }
+
+    public void addCompany(CompanyRequest request) {
+        Company company = new Company();
+        company.setName(request.getName());
+        company.setRegistrationNumber(request.getRegistrationNumber());
+        company.setAddress(request.getAddress());
+        repository.save(company);
+    }
+
+    public void deleteCompany(String id) {
+        repository.deleteById(UUID.fromString(id));
+    }
+
+    public void updateCompany(UUID id, CompanyRequest request) {
+        Company company = getCompanyById(id);
+        company.setName(request.getName());
+        company.setAddress(request.getAddress());
+        company.setRegistrationNumber(request.getRegistrationNumber());
+        repository.save(company);
+    }
+
+    public Company getCompanyById(UUID id) {
+        return repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Company with id " + id + " does not exist"));
+    }
+}
