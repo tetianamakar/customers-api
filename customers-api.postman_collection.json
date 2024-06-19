@@ -1,0 +1,182 @@
+{
+  "info": {
+    "_postman_id": "d47049af-3c2a-4e98-b17b-57a174d9289d",
+    "name": "customers-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23442702"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8080/api/customers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleGFtcGxlVXNlcm5hbWUiLCJpYXQiOjE3MTc3NzA4MDUsImV4cCI6MTcxNzg1NzIwNX0.UjT7kLFOhxjvT4YcjZuONkxu8iV4FtNQzCtZWIyaNb0pAluu_Zua-0SvhfRn7I-dXgIoJUiQOW-ymSkpkMxBxA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"fullName\": \"Lora Raviolo\",\r\n    \"email\": \"xxx@gfdg3.vp\",\r\n    \"phone\": \"+3807688767\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/customers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleGFtcGxlVXNlcm5hbWUiLCJpYXQiOjE3MTc3NDc4NjQsImV4cCI6MTcxNzgzNDI2NH0.edN7Bi-rEjiXnyqpncG8aO3TeQgt4I4trvnKZCC_CaM72AlyZaL7SvnTfo34GfZ4KWXtgqYy-7EmMey0pvNGRA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/customers",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 1,\r\n    \"fullName\": \"Linas Marko\",\r\n    \"email\": \"linas@gmail.com\",\r\n    \"phone\": \"+3806799999\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/customers/{id}",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleGFtcGxlVXNlcm5hbWUiLCJpYXQiOjE3MTc3NDc4NjQsImV4cCI6MTcxNzgzNDI2NH0.edN7Bi-rEjiXnyqpncG8aO3TeQgt4I4trvnKZCC_CaM72AlyZaL7SvnTfo34GfZ4KWXtgqYy-7EmMey0pvNGRA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/customers/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/customers/{id}",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleGFtcGxlVXNlcm5hbWUiLCJpYXQiOjE3MTc2ODA3NDQsImV4cCI6MTcxNzc2NzE0NH0.xH7Y2ztv6zB-0J0AvoZifFOoG64i6vLh01HJGlPhr5gO1yWiuit0_KdJ5Q5f_9PbkNtK_RBjdz3iIXE-JWHpiQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/customers/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
