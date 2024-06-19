@@ -1,4 +1,4 @@
-package com.tetianamakar.customers.payload.response;
+package com.tetianamakar.customers.payload;
 
 import lombok.Getter;
 import lombok.Setter;

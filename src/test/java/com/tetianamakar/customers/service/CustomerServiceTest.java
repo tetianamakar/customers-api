@@ -2,8 +2,8 @@ package com.tetianamakar.customers.service;
 
 import com.tetianamakar.customers.converter.EntityConverter;
 import com.tetianamakar.customers.entity.Customer;
-import com.tetianamakar.customers.payload.request.CustomerRequest;
-import com.tetianamakar.customers.payload.response.CustomerResponse;
+import com.tetianamakar.customers.payload.CustomerRequest;
+import com.tetianamakar.customers.payload.CustomerResponse;
 import com.tetianamakar.customers.repository.CustomerRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -76,8 +76,8 @@ class CustomerServiceTest {
     @DisplayName("Should return all customers")
     void testGetAllCustomers() {
         List<Customer> customers = Arrays.asList(
-            createCustomer(1L, "test1@example.com", "Test User 1", "123456789", true),
-            createCustomer(2L, "test2@example.com", "Test User 2", "987654321", true)
+                createCustomer(1L, "test1@example.com", "Test User 1", "123456789", true),
+                createCustomer(2L, "test2@example.com", "Test User 2", "987654321", true)
         );
         List<CustomerResponse> responses = EntityConverter.convertCustomers(customers);
 

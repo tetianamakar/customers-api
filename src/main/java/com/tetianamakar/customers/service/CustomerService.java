@@ -2,8 +2,8 @@ package com.tetianamakar.customers.service;
 
 import com.tetianamakar.customers.converter.EntityConverter;
 import com.tetianamakar.customers.entity.Customer;
-import com.tetianamakar.customers.payload.request.CustomerRequest;
-import com.tetianamakar.customers.payload.response.CustomerResponse;
+import com.tetianamakar.customers.payload.CustomerRequest;
+import com.tetianamakar.customers.payload.CustomerResponse;
 import com.tetianamakar.customers.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
