@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 
 @Getter
@@ -19,8 +20,18 @@ public class Customer {
     private String fullName;
     @Column(unique = true, nullable = false)
     private String email;
-    // nullable
     private String phone;
     private boolean isActive;
+
+    @PrePersist
+    protected void onCreate() {
+        created = Instant.now().toEpochMilli();
+        isActive = true;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updated = Instant.now().toEpochMilli();
+    }
 
 }
