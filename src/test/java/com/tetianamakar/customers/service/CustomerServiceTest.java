@@ -1,6 +1,5 @@
 package com.tetianamakar.customers.service;
 
-import com.tetianamakar.customers.converter.EntityConverter;
 import com.tetianamakar.customers.entity.Customer;
 import com.tetianamakar.customers.payload.CustomerRequest;
 import com.tetianamakar.customers.payload.CustomerResponse;
@@ -79,8 +78,6 @@ class CustomerServiceTest {
                 createCustomer(1L, "test1@example.com", "Test User 1", "123456789", true),
                 createCustomer(2L, "test2@example.com", "Test User 2", "987654321", true)
         );
-        List<CustomerResponse> responses = EntityConverter.convertCustomers(customers);
-
         when(customerRepository.findAll()).thenReturn(customers);
 
         List<CustomerResponse> result = customerService.getAllCustomers();
