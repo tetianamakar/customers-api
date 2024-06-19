@@ -1,14 +1,16 @@
 package com.tetianamakar.customers.payload.request;
 
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
 public class CustomerRequest {
+
+    private Long id;
 
     @Size(min = 2, max = 50)
     private String fullName;
